@@ -1,0 +1,85 @@
+#decouverte-div h1 
+{
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#decouverte-div {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#video-actiform {
+  border: 1px solid var(--main-color-light);
+  margin: 2rem auto;
+}
+
+#div-form-decouverte {
+  background-color: black;
+  color: var(--main-color-white);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+#formShortMail {
+  margin: 1rem auto;
+  text-align: center;
+  border: 1px solid black;
+  max-width: 400px;
+  padding-left: 2rem;
+
+}
+
+#fsm-contact-donnees,
+#short-contact-btn {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fsm-contact-coordonnees {
+  margin-left: 0.5rem;
+}
+
+#fsm-contact-coordonnees > div {
+  margin: 1rem auto;
+}
+
+#short-contact-btn {
+  display: flex;
+  flex-flow: row;
+  /* justify-content: center; */
+}
+
+.contact-form-error {
+  color: var(--error);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+
+@media screen and (max-width : 560px) {
+  #formShortMail {
+    padding-left: 0;
+  }
+
+  #formShortMail input[type=text] {
+
+    /*   font-size: 1.1rem; */
+      padding: 0.3rem;
+      width: 15rem;
+  }
+}
+
+@media screen and (max-width : 280px) {
+ 
+  #formShortMail input[type=text] {
+      width: 11rem;
+  }
+  .button {
+    padding: 4px 8px!important;
+    font-size: 12px!important;
+  }
+}
