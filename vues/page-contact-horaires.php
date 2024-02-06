@@ -25,21 +25,23 @@
         <h2>RESEAUX SOCIAUX</h2>
         Facebook<br>
         <iframe 
-            id="facebook-iframe" 
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Factiform.fr&tabs=timeline&width=500&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" 
+            id="facebook-iframe"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusthomebike&tabs=timeline&width=500&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=880645370508162" 
             width="500" 
-            height="120" 
+            height="130" 
             style="border:none;overflow:hidden" 
             scrolling="no" 
             frameborder="0" 
             allowfullscreen="true" 
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
+
+
         <br><br>
-        Instagram<br>
+<!--         Instagram<br>
         <a href="https://www.instagram.com/actiformcolombiers34" target="_blank" alt="instagram actiform">
             <img src="img/instagram.jpg" id="instagram-widget">
-        </a>
+        </a> -->
     </div>
     
     <div class="contact-boxes" id="contact-horaires">

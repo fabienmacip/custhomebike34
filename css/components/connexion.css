@@ -1,3 +1,38 @@
+#connexion-div {
+  padding: 1rem;
+  
+  
+}
+
+#connexion-div h1 {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#connexion-form {
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 1200px;
+
+  text-align: center;
+  min-height: 50vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #form-connexion {
 
   margin-bottom: 15vh;

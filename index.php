@@ -2,10 +2,10 @@
 
 
 
-// CGU
-if (isset($_GET['page']) && 'cgu' === $_GET['page']) {
+// CONNEXION
+if (isset($_GET['page']) && 'connexion' === $_GET['page']) {
     ob_start();
-    require_once('vues/page-cgu.php');
+    require_once('vues/page-connexion.php');
     $contenu = ob_get_clean();
     require_once('vues/layout.php');
 

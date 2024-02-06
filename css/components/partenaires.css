@@ -9,6 +9,9 @@
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 2rem;
+
+  max-width: 1000px;
+  margin: 3rem auto;
 }
 
 #main-partenaires > div {
@@ -20,8 +23,12 @@
   margin: auto;
 }
 
+#p2r-expert {
+  background-color: #de1821;
+}
+
 #main-partenaires img {
-  width: 320px;
+  width: 400px;
   max-width: 90%;
 }
 
