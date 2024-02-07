@@ -77,6 +77,18 @@ nav a:hover {
 
 #facebook-icon {
   margin-right: 1rem;
+  transition: box-shadow, 300ms ease 0s;
+  transition: background-color, 300ms ease 0s;
+  
+}
+
+#facebook-icon:hover {
+  box-shadow: 3px 3px 3px var(--main-color-red),
+              -3px -3px 3px var(--main-color-red),
+              3px -3px 3px var(--main-color-red),
+              -3px 3px 3px var(--main-color-red);
+  background-color: var(--main-color-red);
+  
 }
 
 @media screen and (max-width: 1400px) {

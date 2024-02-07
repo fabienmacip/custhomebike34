@@ -10,17 +10,19 @@ function closeContactFormToaster(){
   $('#toaster-decouverte-form').hide();
 }
 
-function checkContactFormField(field) {
+
+
+
+
+function checkConnexionFormField(field) {
     
   let error = false;
   
-  if(field == 'fsm-tel') {
-
-    const regexPhone = /^(0)[1-9](\d{2}){4}$/;
-    error = (($('#fsm-tel').val().length > 0 && !regexPhone.test($('#fsm-tel').val())) || $('#fsm-tel').val().trim().length < 1);    
-
+  if (field == 'connect-email') {
+    const regexEmail = /^([0-9a-zA-Z].*?@([0-9a-zA-Z].*\.\w{2,4}))$/;
+    error = (($('#connect-email').val().length > 0 && !regexEmail.test($('#connect-email').val())) || $('#connect-email').val().trim().length < 1);
   } else {
-      error = ($('#'+field).val().trim().length < 3);
+      error = ($('#'+field).val().trim().length < 8);
   }
   
   if(error) {
@@ -29,35 +31,32 @@ function checkContactFormField(field) {
     $('#error-'+field).hide();
   }
   
-  validFormRdv();
+  validFormConnexion();
 
 }
 
-function validFormRdv() {
+function validFormConnexion() {
   
   let formOK = true;
-  const regexPhone = /^(0)[1-9](\d{2}){4}$/;
+  const regexEmail = /^([0-9a-zA-Z].*?@([0-9a-zA-Z].*\.\w{2,4}))$/;
 
-  if($('#fsm-prenom').val().length < 3){
+  if($('#connect-email').val().length > 0 && !regexEmail.test($('#connect-email').val())){
+    formOK = false;
+  } 
+
+  if($('#connect-passw').val().length < 8){
     formOK = false;
   }
 
-  if($('#fsm-tel').val().length > 0 && !regexPhone.test($('#fsm-tel').val())){
-    formOK = false;
-  }
-
-  if(!($('#fsm-conditions').prop('checked'))){
-    formOK = false;
-  }
 
   if(formOK){
-    $('#btn-envoyer-short-mail').addClass('btn-active');
-    $('#btn-envoyer-short-mail').removeClass('btn-inactive');
-    $('#btn-envoyer-short-mail').prop('disabled', false);
+    $('#btn-connexion').addClass('btn-active');
+    $('#btn-connexion').removeClass('btn-inactive');
+    $('#btn-connexion').prop('disabled', false);
   } else {
-    $('#btn-envoyer-short-mail').removeClass('btn-active');
-    $('#btn-envoyer-short-mail').addClass('btn-inactive');
-    $('#btn-envoyer-short-mail').prop('disabled', true);
+    $('#btn-connexion').removeClass('btn-active');
+    $('#btn-connexion').addClass('btn-inactive');
+    $('#btn-connexion').prop('disabled', true);
   }
   
 }

@@ -10,7 +10,7 @@ h2 {
   margin-bottom: 2.5rem;
 }
 
-input[type=text], input[type=email], input[type=number], select {
+input[type=text], input[type=email], input[type=number], input[type=password], select {
 
 /*   font-size: 1.1rem; */
   border-radius: 5px;
@@ -540,33 +540,7 @@ header .logo {
   max-width: 100%;
 }
 
-#connexion-pass {
-  height: 130px;
-}
 
-#connexion-pass {
-  position: relative;
-}
-
-#form-connexion #password {
-  position: absolute;
-  top: 30px;
-  padding-right: 40px;
-}
-
-#seepass {
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  cursor: pointer;
-}
-
-
-#passwordHelpInline {
-  position: absolute;
-  top: 65px;
-  left: 5px;
-}
 
 
 
