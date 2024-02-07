@@ -1,6 +1,19 @@
 <footer class="text-center mt-5">
         <div class="flex-1" id="footer-special-links">
-          <a href="index.php?page=connexion">Connexion</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            
+            
+            <?php 
+            if(!isset($_SESSION['admin']) || $_SESSION['admin'] < 1) { ?>
+              <a href="index.php?page=connexion">Connexion</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <?php
+            } else { ?>
+              <a href="index.php?page=deconnexion">Se d&eacute;connecter</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <?php
+            }
+          ?>
+
+
+
           <a href="index.php?page=mentions-legales">Mentions L&eacute;gales</a>
         </div>
         <div class="flex-1" id="footer-partenaires">

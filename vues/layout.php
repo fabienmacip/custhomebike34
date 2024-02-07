@@ -6,6 +6,16 @@
 <body id="body">
 
 <?php
+    if(isset($_SESSION['admin']) && $_SESSION['admin'] === 1) {
+        echo "<input type='hidden' id='isSuperAdmin' value='1'>";
+        echo "<input type='hidden' role='1'>";
+    } elseif (isset($_SESSION['admin']) && $_SESSION['admin'] > 1) {
+        echo "<input type='hidden' id='isAdmin' value='".$_SESSION['admin'].">";
+        echo "<input type='hidden' role='2'>";
+    }
+?>
+
+<?php
     require_once("header.php");
 ?>
 

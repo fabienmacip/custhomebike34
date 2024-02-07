@@ -33,7 +33,7 @@ function sendMail($objectToUse) {
   
   //Mail3 = copie cachée
   $mail3 = 'fabien.macip@gmail.com';
-  $mail4 = 'richard.durin@neuf.fr';
+  $mail4 = 'contact@nom-domaine.fr';
   //$mail4 = 'fatabien@gmail.com';
 
   
@@ -41,7 +41,7 @@ function sendMail($objectToUse) {
   //@ini_set('sendmail_from',$mail2);
   error_reporting( E_ALL );
 
-  $fromOK = 'mail_php@pcf-lcf.fr';
+  $fromOK = 'mail_php@nom-domaine.fr';
   //$fromOK = $objectToUse["prenomProspect"].' '.$objectToUse["nomProspect"].' <'.$mail2.'>';
 
 

@@ -10,10 +10,9 @@ class Administrateur
     private $mail;
     private $date_creation;
     private $mot_de_passe;
-    private $partenaire;
     private $isadmin; // si NOT isAdmin, alors c'est un "partenaire"
     
-    public function afficher($id)
+    public function readOneById($id)
     {
         if (!is_null($this->pdo)) {
             $stmt = $this->pdo->prepare('SELECT * FROM administrateur WHERE id = ?');
@@ -59,14 +58,9 @@ class Administrateur
         return $this->mot_de_passe;
     }
 
-    public function getPartenaire()
-    {
-        return $this->partenaire;
-    }
-
     public function getIsAdmin() 
     {
-        return $this->isadmin;
+        return $this->id;
     }
 
     // ROLES 
@@ -77,9 +71,9 @@ class Administrateur
     {
         $role = 0;
         if($this->getIsAdmin() == 1) {
-            $role = 1; //admin
+            $role = 1; //super-admin (webmaster)
         } else {
-            $role = 2; //partenaire
+            $role = 2; //utilisateur
         }
         return $role;
     }

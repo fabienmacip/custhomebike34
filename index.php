@@ -1,9 +1,25 @@
 <?php
+session_start();
 
+require_once('modeles/ConnectMe.php');
+require_once('controleurs/controleur.php');
+require_once('modeles/Modele.php');
+require_once('modeles/MessageAbsence.php');
+require_once('modeles/MessageAbsences.php');
+require_once('modeles/Administrateur.php');
+require_once('modeles/Administrateurs.php');
 
+$controleur = new Controleur($pdo);
 
-// CONNEXION
-if (isset($_GET['page']) && 'connexion' === $_GET['page']) {
+// PROCEDURE Connexion et Déconnexion
+if(isset($_POST['action']) && 'connexion' === $_POST['action']) {
+    $controleur->verifConnexion($_POST['connect-email'], $_POST['connect-passw']);
+}  elseif (isset($_GET['page']) && 'deconnexion' === $_GET['page']) {
+    $controleur->deconnexion();
+}
+
+// PAGE CONNEXION
+elseif (isset($_GET['page']) && 'connexion' === $_GET['page']) {
     ob_start();
     require_once('vues/page-connexion.php');
     $contenu = ob_get_clean();
