@@ -18,6 +18,19 @@ if(isset($_POST['action']) && 'connexion' === $_POST['action']) {
     $controleur->deconnexion();
 }
 
+// Ajout message absence
+elseif (isset($_POST['action']) && $_POST['action'] === 'messageAbsenceCreate') {
+    $controleur->createMessageAbsence($_POST['datedebut'], $_POST['datefin'], $_POST['msgabs-message']);
+}
+
+elseif (isset($_POST['action']) && $_POST['action'] === 'messageAbsenceDelete') {
+    $controleur->deleteMessageAbsence($_POST['msgabs-id']);
+}
+
+elseif (isset($_POST['action']) && $_POST['action'] === 'messageAbsenceUpdate') {
+    $controleur->updateMessageAbsence($_POST['msgabs-id'],$_POST['datedebut'], $_POST['datefin'], $_POST['msgabs-message']);
+}
+
 // PAGE CONNEXION
 elseif (isset($_GET['page']) && 'connexion' === $_GET['page']) {
     ob_start();
@@ -78,7 +91,8 @@ elseif (isset($_GET['page']) && 'partenaires' === $_GET['page']){
 
 else {
     ob_start();
-    require_once('vues/page-accueil.php');
+    $controleur->accueil();
+    //require_once('vues/page-accueil.php');
     //$contenu = ob_get_clean();
     //require_once('vues/layout.php');
 }

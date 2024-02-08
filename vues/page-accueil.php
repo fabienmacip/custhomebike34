@@ -3,6 +3,7 @@
 $titre = 'CUST\'HOME BIKE 34';
 
 ob_start();
+
 ?>
 
 
@@ -19,6 +20,27 @@ ob_start();
         MSR 34
       </span>
   </div>
+
+<?php
+
+// DEBUT Test si "message absence" à afficher
+
+if(isset($messagesAbsencesToday) && !empty($messagesAbsencesToday) ) { ?>
+
+  <input type="hidden" id="message-absence-flag" value="yes">
+  <div id="message-absence">
+    <?= $messagesAbsencesToday->getMessage(); ?>
+    
+  </div>
+
+<?php }
+// FIN Test si "message absence" à afficher
+
+// Gestion des messages d'absence
+if (isset($_SESSION['admin']) && $_SESSION['admin'] > 0) {
+  require_once('messagesAbsence.php');
+}
+?>
 
   <div class="row max-width-100percent jcc wrap" id="accueil-text-boxes">
     

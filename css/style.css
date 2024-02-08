@@ -287,35 +287,41 @@ header .logo {
 * * * * * * * * * * * * * * * * */
 
 #div-image-accueil {
-  font-size: 6rem;
+ font-size: 6rem;
+ font-weight: bold;
+ min-height: 400px;
+ background-image: url("../img/bikers-accueil.jpg");
+ background-position: center;
+ background-size: cover;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: black;
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: white;
+ text-shadow: 3px 3px 3px var(--main-color-red);
+ margin-bottom: 1rem;
+ /*transition-property: color;
+ transition-delay: 100ms;
+ transition-timing-function: ease;
+ transition-duration: 1s;
+ */
+ 
+ animation-name: imageAccueilTitle;
+ animation-duration: 6s;
+ animation-timing-function: ease;
+ animation-delay: 0s;
+ animation-iteration-count: infinite;
+ animation-fill-mode: forwards;
+ 
+ 
+}
 
-  font-weight: bold;
-  
-  min-height: 400px;
-  background-image: url("../img/bikers-accueil.jpg");
-  background-position: center;
-  background-size: cover;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  
-  color: black;
-  
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-
-  text-shadow: 3px 3px 3px var(--main-color-red);
-  
-  margin-bottom: 1rem;
-
-  transition-property: color;
-  transition-delay: 100ms;
-  transition-timing-function: ease;
-  transition-duration: 1s;
+@keyframes imageAccueilTitle {
+  0%, 50%, 100% { color: black; text-shadow: 3px 3px 3px var(--main-color-red); }
+  25%, 75% { color: var(--main-color-red);  text-shadow: 3px 3px 3px var(--main-color-white);}
 }
 
 #div-image-accueil > span:nth-child(2) {
@@ -327,8 +333,126 @@ header .logo {
 }
 
 #div-image-accueil:hover {
-  color: var(--main-color-red);
-  text-shadow: 3px 3px 3px var(--main-color-white);
+  /* color: var(--main-color-red);
+  text-shadow: 3px 3px 3px var(--main-color-white); */
+}
+
+#message-absence {
+  min-height: 40px;
+  min-width: 200px;
+  width: 94%;
+  max-width: 600px;
+  padding: 1rem;
+  margin: 2rem auto;
+  
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  background-color: red;
+  border: 2px solid white;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  animation-name: messageAbsence;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+
+  box-shadow: 5px 5px 5px 5px var(--main-color-dark), 
+  5px -5px 5px 5px var(--main-color-dark),
+  -5px 5px 5px 5px var(--main-color-dark),
+  -5px -5px 5px 5px var(--main-color-dark),
+  6px 6px 13px 13px var(--main-color-red),
+  -6px 6px 13px 13px var(--main-color-red),
+  -6px -6px 13px 13px var(--main-color-red),
+  6px -6px 13px 13px var(--main-color-red);
+;
+ 
+}
+
+@keyframes messageAbsence {
+  0%, 100% { color: white; border-color: white;}
+  50% { color: black; border-color: var(--main-color-red);}
+}
+
+#messageAbsenceForm{
+  width: 94%;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+.btns-msgabs{
+  display: flex;
+  flex-direction: row;
+}
+
+.form-msgabs{
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.form-msgabs textarea, .form-msgabs input:no-button{
+  background-color: lightgray;
+  font-size: 16px;
+
+
+  padding: 6px 12px;
+  color: black;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.msgabs-message-label {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;  
+}
+
+.msgabs-input-label {
+  text-align: center;
+}
+
+.form-msgabs textarea{
+  width: 100%;
+  max-width: 600px;
+}
+
+.btns-msgabs div {
+  min-width: 60px;
+}
+
+#msgabsAdded {
+  margin: 1rem auto;
+  width: 95%;
+  max-width: 600px;
+
+  background-color: green;
+  color: white;
+  padding: 1rem;
+
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 /* - - - - - - - A C C U E I L   ---   T E X T   B O X E S - - - - - - - - - - */
@@ -640,6 +764,11 @@ header .logo {
 
   #div-image-accueil:hover{
     text-shadow: 2px 2px 2px var(--main-color-white);
+  }
+
+  #message-absence {
+    width: 90%;
+    font-size: 1.2rem;
   }
 }
 

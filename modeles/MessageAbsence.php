@@ -29,23 +29,6 @@ class MessageAbsence
     }
 
 
-    public function readToday()
-    {
-        if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->prepare('SELECT * FROM message_absence WHERE (DATEDIFF(datedebut,CURRENT_DATE()) <= 0) AND (DATEDIFF(datefin,CURRENT_DATE()) >= 0)');
-        }
-        $tuple = [];//null;
-        
-        if ($stmt->execute([/* $today,$today */])) {
-            $tuple = $stmt->fetchObject('MessageAbsence',[$this->pdo]);
-            if (!is_object($tuple)) {
-                $tuple = []; //null;
-            }
-        }
-        $stmt->closeCursor();
-        return $tuple;
-    }
-    
 
     public function getId()
     {

@@ -16,6 +16,7 @@
     crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/messageAbsence.js?v=2"></script>
     
     
 

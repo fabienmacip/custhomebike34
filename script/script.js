@@ -4,12 +4,25 @@ window.addEventListener('load', function() {
     alert('Votre message a bien été envoyé. Nous vous recontactons dès que possible.');
   }
 
+  if($('#message-absence-flag') && $('#message-absence-flag').val() === 'yes') {
+    const messageAbsence = $('#message-absence').text().trim();
+    //this.alert(messageAbsence);
+  }
+
+  if($('#msgabsAdded') && $('#msgabsAdded').text() !== '') {
+    let msgabsConfirm = $('#msgabsAdded').html().replace("<br>","\n");
+    msgabsConfirm = msgabsConfirm.replace("<pre>","\n");
+    msgabsConfirm = msgabsConfirm.replace("</pre>","\n\n");
+    msgabsConfirm = msgabsConfirm.replace(/(<([^>]+)>)/gi, "");
+    alert(msgabsConfirm);
+  }
+
 })
 
-function closeContactFormToaster(){
+/* function closeContactFormToaster(){
   $('#toaster-decouverte-form').hide();
 }
-
+ */
 
 
 

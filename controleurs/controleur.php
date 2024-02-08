@@ -38,18 +38,52 @@ class Controleur {
 
     // ACCUEIL
 
-    public function accueil($mail = null)
+    public function accueil($mail = null, $msgConfirm = '')
     {
-        if($mail !== null) {
+        $messagesAbsences = new MessageAbsences($this->pdo);
+        $messagesAbsencesToday = $messagesAbsences->readAllMessageAbsenceToday();
+     
+        if(isset($_SESSION['admin']) || $mail !== null) {
             $messagesAbsences = new MessageAbsences($this->pdo);
             $messagesAbsences = $messagesAbsences->readAllMessageAbsence();
             $administrateurs = new Administrateurs($this->pdo);
             $administrateurs = $administrateurs->listerOneByMail($mail);
         }
+
         require_once('vues/page-accueil.php');
     }
     
+// MESSAGES ABSENCES (pour page accueil)
 
+public function createMessageAbsence($datedeb, $datefin, $msg)
+{
+    $msgabss = new MessageAbsences($this->pdo);
+    $msgabsToCreate = $msgabss->create($datedeb, $datefin, $msg);
+    
+    //$messagesAbsence = $msgabss->lister();
+    $this->accueil('', $msgabsToCreate);
+    //require_once('vues/page-accueil.php');
+}
+
+public function updateMessageAbsence($id, $datedeb, $datefin, $msg)
+{
+    $msgabss = new MessageAbsences($this->pdo);
+    $msgabsToCreate = $msgabss->update($id, $datedeb, $datefin, $msg);
+    
+    //$messagesAbsence = $msgabss->lister();
+    $this->accueil('', $msgabsToCreate);
+    //require_once('vues/page-accueil.php');
+}
+
+public function deleteMessageAbsence($id)
+{
+    $msgabss = new MessageAbsences($this->pdo);
+    $msgabsToCreate = $msgabss->delete($id);
+    
+    //$messagesAbsence = $msgabss->lister();
+    $this->accueil('', $msgabsToCreate);
+    //require_once('vues/page-accueil.php');
+}
 
 
 // ADMINISTRATEUR - CRUD
