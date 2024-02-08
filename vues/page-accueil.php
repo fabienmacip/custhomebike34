@@ -39,6 +39,7 @@ if(isset($messagesAbsencesToday) && !empty($messagesAbsencesToday) ) { ?>
 // Gestion des messages d'absence
 if (isset($_SESSION['admin']) && $_SESSION['admin'] > 0) {
   require_once('messagesAbsence.php');
+  require_once('passwordModify.php');
 }
 ?>
 

@@ -32,7 +32,7 @@ if(isset($msgConfirm) && $msgConfirm !== '') { ?>
         <label for="msgabs-message" class="msgabs-message-label">Votre message<br>
         <textarea id="msgabs-message" name="msgabs-message" maxlength=600 rows=8 placeholder="votre message" tabindex="3">
 Chers clients,
-le magasin sera exceptionnellement fermé ce ...
+votre atlier Cust'Home Bike 34 sera exceptionnellement fermé ce ...
 Merci pour votre compréhension.
         </textarea></label><br>
 

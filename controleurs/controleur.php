@@ -111,6 +111,13 @@ public function deleteMessageAbsence($id)
         require_once('vues/liste-administrateurs.php');
     }
 
+    public function updatePassword($id,$pass)
+    {
+        $administrateurs = new Administrateurs($this->pdo);
+        $administrateurToUpdate = $administrateurs->updatePassword($id,$pass);
+        $this->accueil('', $administrateurToUpdate);
+    }
+
     public function deleteAdministrateur($id,$nom,$prenom)
     {
         $administrateurs = new Administrateurs($this->pdo);

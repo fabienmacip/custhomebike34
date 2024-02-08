@@ -118,6 +118,31 @@ class Administrateurs
         return $tupleUpdated;
     }
 
+    // UPDATE PASSWORD
+    public function updatePassword($id, $mot_de_passe) {
+        if (!is_null($this->pdo)) {
+            try {
+                // Si le mot de passe a été modifié (donc non vide)
+                if($mot_de_passe != '') {
+                    $pass = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+                    // Requête mysql pour insérer des données
+                    $sql = "UPDATE administrateur SET mot_de_passe = (:mot_de_passe) WHERE id = (:id)";
+                    $res = $this->pdo->prepare($sql);
+                    $exec = $res->execute(array("mot_de_passe"=>$pass, ":id"=>$id));
+                }
+                if($exec){
+                    $tupleUpdated = "Votre mot de passe a bien été modifié.";
+                }
+            }
+            catch(Exception $e) {
+                $tupleUpdated = "Votre mot de passe n'a pas pu être modifié.<br/><br/>".$e;
+            }
+        }
+        
+        return $tupleUpdated;
+    }
+
+
 
     // DELETE
     //Supprime 1 administrateur de la BDD.

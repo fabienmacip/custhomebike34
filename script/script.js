@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
     const messageAbsence = $('#message-absence').text().trim();
     //this.alert(messageAbsence);
   }
-
+  
   if($('#msgabsAdded') && $('#msgabsAdded').text() !== '') {
     let msgabsConfirm = $('#msgabsAdded').html().replace("<br>","\n");
     msgabsConfirm = msgabsConfirm.replace("<pre>","\n");
@@ -18,14 +18,6 @@ window.addEventListener('load', function() {
   }
 
 })
-
-/* function closeContactFormToaster(){
-  $('#toaster-decouverte-form').hide();
-}
- */
-
-
-
 
 function checkConnexionFormField(field) {
     
@@ -72,4 +64,68 @@ function validFormConnexion() {
     $('#btn-connexion').prop('disabled', true);
   }
   
+}
+
+function checkPasswordFormField(field) {
+    
+  let error = false;
+  let error2 = false;
+
+  if (field == 'password-passw') {
+    error = ($('#password-passw').val().length > 0 && $('#password-passw').val().trim().length < 8);
+  } 
+  
+  if (field == 'password-passw2') {
+    error = ($('#password-passw2').val().length > 0 && $('#password-passw2').val().trim().length < 8);
+  } 
+
+  if($('#password-passw').val().length >= 8 && $('#password-passw2').val().length >= 8) {
+    error2 = $('#password-passw').val() !== $('#password-passw2').val();
+  }
+
+  if(error) {
+    $('#error-'+field).show();
+  } else {
+    $('#error-'+field).hide();
+  }
+
+  if(error2) {
+    $('#error2-'+field).show();
+  } else {
+    $('#error2-'+field).hide();
+  }
+
+
+  validFormPassword();
+
+}
+
+function validFormPassword() {
+  
+  let formOK = true;
+
+  if(($('#password-passw').val().length > 0 && $('#password-passw').val().trim().length < 8) || 
+     ($('#password-passw2').val().length > 0 && $('#password-passw2').val().trim().length < 8) ||
+     ($('#password-passw').val() !== $('#password-passw2').val())){
+    formOK = false;
+  } 
+
+  if(formOK){
+    $('#btn-password-update').addClass('btn-active');
+    $('#btn-password-update').removeClass('btn-inactive');
+    $('#btn-password-update').prop('disabled', false);
+  } else {
+    $('#btn-password-update').removeClass('btn-active');
+    $('#btn-password-update').addClass('btn-inactive');
+    $('#btn-password-update').prop('disabled', true);
+  }
+}
+
+
+function confirmPasswordUpdate() {
+  if (!confirm('Valider la modification de votre mot de passe ?')){
+    return;
+  } else {
+    $('#form-password').submit();
+  }
 }

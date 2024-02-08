@@ -10,7 +10,8 @@
         echo "<input type='hidden' id='isSuperAdmin' value='1'>";
         echo "<input type='hidden' role='1'>";
     } elseif (isset($_SESSION['admin']) && $_SESSION['admin'] > 1) {
-        echo "<input type='hidden' id='isAdmin' value='".$_SESSION['admin'].">";
+        $sessionAdmin = $_SESSION['admin'];
+        echo "<input type='hidden' id='isAdmin' value='".$sessionAdmin.">";
         echo "<input type='hidden' role='2'>";
     }
 ?>

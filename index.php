@@ -31,6 +31,11 @@ elseif (isset($_POST['action']) && $_POST['action'] === 'messageAbsenceUpdate') 
     $controleur->updateMessageAbsence($_POST['msgabs-id'],$_POST['datedebut'], $_POST['datefin'], $_POST['msgabs-message']);
 }
 
+// PASSWORD UPDATE
+elseif (isset($_POST['action']) && $_POST['action'] === 'passwordUpdate') {
+    $controleur->updatePassword($_POST['adminid'],$_POST['password-passw']);
+}
+
 // PAGE CONNEXION
 elseif (isset($_GET['page']) && 'connexion' === $_GET['page']) {
     ob_start();
