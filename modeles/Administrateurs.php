@@ -8,7 +8,7 @@ class Administrateurs
     public function lister()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT * FROM administrateur');
+            $stmt = $this->pdo->query('SELECT * FROM custhomebike_administrateur');
         }
         $liste = [];
         while ($element = $stmt->fetchObject('Administrateur',[$this->pdo])) {
@@ -21,7 +21,7 @@ class Administrateurs
     public function listerPartenaires()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT * FROM administrateur WHERE partenaire <> 0');
+            $stmt = $this->pdo->query('SELECT * FROM custhomebike_administrateur WHERE partenaire <> 0');
         }
         $liste = [];
         while ($element = $stmt->fetchObject('Administrateur',[$this->pdo])) {
@@ -36,7 +36,7 @@ class Administrateurs
         $id = intval($id);
         if (!is_null($this->pdo)) {
             //$stmt = $this->pdo->query('SELECT * FROM administrateur WHERE id = :id');
-            $sql = 'SELECT * FROM administrateur WHERE id = :id';
+            $sql = 'SELECT * FROM custhomebike_administrateur WHERE id = :id';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(['id' => $id]);
         }
@@ -54,7 +54,7 @@ class Administrateurs
         $mail = trim($mail);
         if (!is_null($this->pdo)) {
             //$stmt = $this->pdo->query('SELECT * FROM administrateur WHERE id = :id');
-            $sql = 'SELECT * FROM administrateur WHERE mail = :mail';
+            $sql = 'SELECT * FROM custhomebike_administrateur WHERE mail = :mail';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(['mail' => $mail]);
         }
@@ -75,7 +75,8 @@ class Administrateurs
                 $today = date("Y-m-d");
                 $pass = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 
-                $sql = "INSERT INTO administrateur (nom, prenom, mail, date_creation, mot_de_passe) VALUES (:nom, :prenom, :mail, :date_creation, :mot_de_passe)";
+            $sql = 'SELECT * FROM custhomebike_administrateur WHERE mail = :mail';
+                $sql = "INSERT INTO custhomebike_administrateur (nom, prenom, mail, date_creation, mot_de_passe) VALUES (:nom, :prenom, :mail, :date_creation, :mot_de_passe)";
                 $res = $this->pdo->prepare($sql);
                 $exec = $res->execute(array(":nom"=>$nom, ":prenom"=>$prenom, ":mail"=>$mail, ":date_creation"=>$today, "mot_de_passe"=>$pass));
                 if($exec){
@@ -98,11 +99,11 @@ class Administrateurs
                 if($mot_de_passe != '') {
                     $pass = password_hash($mot_de_passe, PASSWORD_DEFAULT);
                     // Requête mysql pour insérer des données
-                    $sql = "UPDATE administrateur SET nom = (:nom), prenom = (:prenom), mail = (:mail), mot_de_passe = (:mot_de_passe) WHERE id = (:id)";
+                    $sql = "UPDATE custhomebike_administrateur SET nom = (:nom), prenom = (:prenom), mail = (:mail), mot_de_passe = (:mot_de_passe) WHERE id = (:id)";
                     $res = $this->pdo->prepare($sql);
                     $exec = $res->execute(array(":nom"=>$nom, ":prenom"=>$prenom, ":mail"=>$mail, "mot_de_passe"=>$pass, ":id"=>$id));
                 } else { // Sinon, on met tout à jour sauf le mot de passe
-                    $sql = "UPDATE administrateur SET nom = (:nom), prenom = (:prenom), mail = (:mail) WHERE id = (:id)";
+                    $sql = "UPDATE custhomebike_administrateur SET nom = (:nom), prenom = (:prenom), mail = (:mail) WHERE id = (:id)";
                     $res = $this->pdo->prepare($sql);
                     $exec = $res->execute(array(":nom"=>$nom, ":prenom"=>$prenom, ":mail"=>$mail, ":id"=>$id));
                 }
@@ -126,7 +127,7 @@ class Administrateurs
                 if($mot_de_passe != '') {
                     $pass = password_hash($mot_de_passe, PASSWORD_DEFAULT);
                     // Requête mysql pour insérer des données
-                    $sql = "UPDATE administrateur SET mot_de_passe = (:mot_de_passe) WHERE id = (:id)";
+                    $sql = "UPDATE custhomebike_administrateur SET mot_de_passe = (:mot_de_passe) WHERE id = (:id)";
                     $res = $this->pdo->prepare($sql);
                     $exec = $res->execute(array("mot_de_passe"=>$pass, ":id"=>$id));
                 }
@@ -150,7 +151,7 @@ class Administrateurs
     {
         if (!is_null($this->pdo)) {
             try{
-                $sql = 'DELETE FROM administrateur WHERE id = :id';
+                $sql = 'DELETE FROM custhomebike_administrateur WHERE id = :id';
                 $stmt = $this->pdo->prepare($sql);
                 $stmt->execute(['id' => $id]);
                 //$this->pdo->query('DELETE FROM administrateur WHERE id = '.$id.'');
@@ -168,7 +169,7 @@ class Administrateurs
     public function verifConnexion($mail,$password) 
     {
         if (!is_null($this->pdo)) {
-            $sql = 'SELECT * FROM administrateur WHERE mail = :mail';
+            $sql = 'SELECT * FROM custhomebike_administrateur WHERE mail = :mail';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(['mail' => $mail]);
         }

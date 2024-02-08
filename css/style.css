@@ -17,6 +17,7 @@ input[type=text], input[type=email], input[type=number], input[type=password], s
   padding: 0.5rem;
   margin: 0.5rem auto;
   width: 20rem;
+  max-width: 100%;
 
   border: 1px solid var(--main-color-black);
   -webkit-border-radius: 5px;

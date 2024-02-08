@@ -17,6 +17,12 @@ window.addEventListener('load', function() {
     alert(msgabsConfirm);
   }
 
+/*   if($('#admin-greeting') && ('#admin-greeting').text() !== '') {
+    localStorage.setItem('admin-greeting',$('#admin-greeting').html());
+  }
+   */
+
+
 })
 
 function checkConnexionFormField(field) {

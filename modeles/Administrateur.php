@@ -15,7 +15,7 @@ class Administrateur
     public function readOneById($id)
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->prepare('SELECT * FROM administrateur WHERE id = ?');
+            $stmt = $this->pdo->prepare('SELECT * FROM custhomebike_administrateur WHERE id = ?');
         }
         $element = null;
         if ($stmt->execute([$id])) {

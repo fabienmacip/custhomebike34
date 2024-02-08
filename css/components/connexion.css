@@ -1,3 +1,15 @@
+#admin-greeting {
+  margin: 0;
+  padding: 2px;
+
+  background-color: var(--main-color-red);
+  color: white;
+
+  width: 100%;
+  text-align: center;
+}
+
+
 #connexion-div {
   padding: 1rem;
   
@@ -6,6 +18,23 @@
 #connexion-div h1 {
   margin: 1rem auto;
   text-align: center;
+}
+
+#messageConnexionError {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 #connexion-form {

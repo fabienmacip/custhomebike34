@@ -25,13 +25,11 @@ class Controleur {
         $admin = new Administrateurs($this->pdo);
         $messageConnexion = "";
         //if($admin->verifConnexion($mail,$password)) {
-            if($admin->verifConnexion($mail,$password) > 0) {
-            //$_SESSION['admin'] = 1;
-            /* $this->afficherMissions(); */
+        if($admin->verifConnexion($mail,$password) > 0) {
             $this->accueil($mail);
         } else {
-            session_destroy();
-            $messageConnexion = "Identifiant ou mot de passe erroné(s).";
+            //session_destroy();
+            $messageConnexionError = "Identifiant ou mot de passe erroné(s).";
             require_once('vues/page-connexion.php');
         }
     }
@@ -51,8 +49,13 @@ class Controleur {
         }
 
         require_once('vues/page-accueil.php');
+        
     }
     
+    public function connexionPage() {
+        require_once('vues/page-connexion.php');
+    }
+
 // MESSAGES ABSENCES (pour page accueil)
 
 public function createMessageAbsence($datedeb, $datefin, $msg)

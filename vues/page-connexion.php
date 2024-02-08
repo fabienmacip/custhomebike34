@@ -1,6 +1,21 @@
+<?php
+
+$titre = 'CUST\'HOME BIKE 34';
+ob_start();
+
+
+?>
+
+
+
 <div id="connexion-div">
 <a href="index.php" id="back-home-from-ml" rel="accueil" class="link-to-home">&lt;&lt;&lt; accueil</a>
     <h1>Se connecter</h1>
+
+    <?php if(isset($messageConnexionError) && $messageConnexionError !== '') {?>
+        <div id="messageConnexionError"><?= $messageConnexionError; ?></div>
+    <?php } ?>
+
     <div id="connexion-form" class="box">
         <form method="post" id="form-connexion" onSubmit="validFormConnexion()" action="index.php" class="p-4 mx-auto">
 
@@ -30,3 +45,7 @@
         </form>
     </div>
 </div>
+
+<?php
+$contenu = ob_get_clean();
+require_once('layout.php'); 

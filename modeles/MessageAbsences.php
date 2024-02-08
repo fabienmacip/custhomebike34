@@ -10,7 +10,7 @@ class MessageAbsences
         if (!is_null($this->pdo)) {
             try {
                 // Requête mysql pour insérer des données
-                $sql = "INSERT INTO message_absence (datedebut, datefin, message) VALUES (:datedebut, :datefin, :msg)";
+                $sql = "INSERT INTO custhomebike_message_absence (datedebut, datefin, message) VALUES (:datedebut, :datefin, :msg)";
                 $res = $this->pdo->prepare($sql);
                 $exec = $res->execute(array(":datedebut"=>$datedeb, ":datefin"=>$datefin, ":msg"=>$msg));
                 if($exec){
@@ -31,7 +31,7 @@ class MessageAbsences
     public function readAllMessageAbsence()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT * FROM message_absence ORDER BY datedebut DESC');
+            $stmt = $this->pdo->query('SELECT * FROM custhomebike_message_absence ORDER BY datedebut DESC');
         }
         $tuples = [];
         while ($tuple = $stmt->fetchObject('MessageAbsence', [$this->pdo])) {
@@ -46,7 +46,7 @@ class MessageAbsences
     public function readAllMessageAbsenceToday()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->prepare('SELECT * FROM message_absence WHERE (DATEDIFF(datedebut,CURRENT_DATE()) <= 0) AND (DATEDIFF(datefin,CURRENT_DATE()) >= 0)');
+            $stmt = $this->pdo->prepare('SELECT * FROM custhomebike_message_absence WHERE (DATEDIFF(datedebut,CURRENT_DATE()) <= 0) AND (DATEDIFF(datefin,CURRENT_DATE()) >= 0)');
         }
         $tuple = [];//null;
         
@@ -65,7 +65,7 @@ class MessageAbsences
         if (!is_null($this->pdo)) {
             try {
                     // Requête mysql pour insérer des données
-                    $sql = "UPDATE message_absence SET datedebut = (:datedebut), datefin = (:datefin), message = (:msg) WHERE id = (:id)";
+                    $sql = "UPDATE custhomebike_message_absence SET datedebut = (:datedebut), datefin = (:datefin), message = (:msg) WHERE id = (:id)";
                     $res = $this->pdo->prepare($sql);
                     $exec = $res->execute(array(":datedebut"=>$datedeb, ":datefin"=>$datefin, ":msg"=>$msg, ":id"=>$id));
                     if($exec){
@@ -85,7 +85,7 @@ class MessageAbsences
     {
         if (!is_null($this->pdo)) {
             try{
-                $sql = 'DELETE FROM message_absence WHERE id = :id';
+                $sql = 'DELETE FROM custhomebike_message_absence WHERE id = :id';
                 $stmt = $this->pdo->prepare($sql);
                 $stmt->execute(['id' => $id]);
                 //$this->pdo->query('DELETE FROM administrateur WHERE id = '.$id.'');

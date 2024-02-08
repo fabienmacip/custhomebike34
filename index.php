@@ -14,7 +14,9 @@ $controleur = new Controleur($pdo);
 // PROCEDURE Connexion et Déconnexion
 if(isset($_POST['action']) && 'connexion' === $_POST['action']) {
     $controleur->verifConnexion($_POST['connect-email'], $_POST['connect-passw']);
-}  elseif (isset($_GET['page']) && 'deconnexion' === $_GET['page']) {
+}  
+
+elseif (isset($_GET['page']) && 'deconnexion' === $_GET['page']) {
     $controleur->deconnexion();
 }
 
@@ -39,9 +41,10 @@ elseif (isset($_POST['action']) && $_POST['action'] === 'passwordUpdate') {
 // PAGE CONNEXION
 elseif (isset($_GET['page']) && 'connexion' === $_GET['page']) {
     ob_start();
-    require_once('vues/page-connexion.php');
-    $contenu = ob_get_clean();
-    require_once('vues/layout.php');
+    $controleur->connexionPage();
+    //require_once('vues/page-connexion.php');
+    /* $contenu = ob_get_clean();
+    require_once('vues/layout.php'); */
 
 }
 

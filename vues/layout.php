@@ -20,6 +20,18 @@
     require_once("header.php");
 ?>
 
+<?php
+    if(isset($_SESSION['admin']) && $_SESSION['admin'] > 0) {
+
+        ?>
+           <div id='admin-greeting'>
+                Bonjour <b><?= $_SESSION['prenom']; ?> <?= $_SESSION['nom']; ?></b>,<br>
+                Vous &ecirc;tes connect&eacute;(e) avec l'adresse mail : <?= $_SESSION['mail']; ?>.
+            </div>
+        <?php
+    }
+?>
+
 <section>
 
     <?php 

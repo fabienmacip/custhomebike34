@@ -1,4 +1,9 @@
 <head>
+    <?php
+        if(!isset($titre) || $titre === '') {
+            $titre = "CUST'HOME BIKE 34";
+        }
+    ?>
     <title><?= $titre ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +20,8 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="script/script.js"></script>
-    <script type="text/javascript" src="script/messageAbsence.js"></script>
+    <script type="text/javascript" src="script/script.js?v=2"></script>
+    <script type="text/javascript" src="script/messageAbsence.js?v=2"></script>
     
     
 

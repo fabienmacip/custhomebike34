@@ -14,7 +14,7 @@ class MessageAbsence
     public function readOneById($id)
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->prepare('SELECT * FROM message_absence WHERE id = ?');
+            $stmt = $this->pdo->prepare('SELECT * FROM custhomebike_message_absence WHERE id = ?');
         }
         $tuple = [];//null;
         
