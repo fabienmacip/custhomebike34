@@ -51,7 +51,7 @@
             </div>                
             <div>
                 <a href="https://www.ngkntk.com/fr/" target="_blank">
-                    <img src="img/partenaires/ngk-bougies.svg" alt="ngk-bougies">
+                    <img src="img/partenaires/ngk-bougies.webp" alt="ngk-bougies">
                 </a>
             </div>
         </div>    

@@ -1,8 +1,14 @@
 <div id="nos-locaux-div">
     
     <h1>NOS LOCAUX</h1>
-    <div id="responsable-site">
-        Reponsable site : C&eacute;dric CONDAT
+    <div id="responsable-site" class="box">
+        Reponsable site : C&eacute;d'<br>
+        <img 
+            src="img/locaux/custhomebike34-ced.jpg" 
+            alt="Responsable site : C&eacute;d'"
+            id="responsable-site-img"   
+            class="box" 
+        />
     </div>
     <div id="nos-locaux-cards">
         <div class="nos-locaux-card">

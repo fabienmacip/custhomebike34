@@ -456,6 +456,7 @@ header .logo {
   -o-border-radius: 5px;
 }
 
+
 /* - - - - - - - A C C U E I L   ---   T E X T   B O X E S - - - - - - - - - - */
 
 .accueil-text-boxes {
@@ -518,10 +519,40 @@ header .logo {
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: center;
-
+  align-items: flex-start;
   gap: 2rem;
   
 }
+
+#accueil-motos-big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+  text-align: left;
+
+  font-size: 1.2rem;
+
+  width: 100%; 
+  max-width: 800px;
+
+  border: 1px solid black;
+  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.2);
+
+
+  border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  -ms-border-radius:7px;
+  -o-border-radius:7px;
+
+}
+
+#accueil-motos-big-card-text {
+  padding: 2rem 1rem 1rem 1rem;
+}
+
 
 #accueil-motos-cards .accueil-motos-card {
   display: flex;
@@ -800,7 +831,11 @@ header .logo {
     font-size: 3rem;
     line-height: 120%;
   }
- 
+
+  #accueil-motos-big-card {
+    font-size: 1rem;
+  }
+
   #div-image-accueil > span:nth-child(2) {
     font-size: 1.5rem;
   }

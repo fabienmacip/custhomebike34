@@ -11,8 +11,24 @@
 #responsable-site {
   max-width: 600px;
   margin: 1rem auto;
+  padding: 1rem 0;
   text-align: center;
   font-size: 2rem;
+
+  background: linear-gradient(-30deg, var(--main-color-white), var(--main-color-white) 15%, var(--main-color-red) 95%, var(--main-color-red));
+  
+}
+
+#responsable-site-img {
+  width: 200px;
+
+  border: 2px solid var(--main-color-dark);
+  
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 #nos-locaux-cards {
@@ -36,10 +52,6 @@
   -o-border-radius: 5px;
 }
 
-.nos-locaux-img {
-  
-
-}
 
 .nos-locaux-text {
   padding: 12px 6px;
@@ -51,5 +63,27 @@
   #nos-locaux-div h1 
   {
     font-size: 1.8rem;
+  }
+
+  #responsable-site {
+    font-size: 1.5rem;
+  }
+
+  .nos-locaux-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #responsable-site {
+    font-size: 1.2rem;
+  }
+  
+  #responsable-site-img {
+    width: 150px;
+  }
+
+  .nos-locaux-text {
+    font-size: 1rem;
   }
 }

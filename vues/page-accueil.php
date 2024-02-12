@@ -78,6 +78,24 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] > 0) {
       </p>
     </div>
 
+
+
+
+<!--     <div id="accueil-motos" class="accueil-text-boxes">
+      <div id="accueil-motos-big-card">
+        <div id="accueil-motos-big-card-img"> -->
+          <!-- <img src="img/accueil-motos/harley.jpg" alt="moto" /> -->
+          <?php
+          /*   require_once('slider-page-accueil.php'); */
+          ?>
+<!--         </div>
+        <div id="accueil-motos-big-card-text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. A vel quis exercitationem. Debitis earum repudiandae unde delectus consectetur a est animi, iure necessitatibus totam blanditiis minima illo voluptatibus consequuntur ex nisi alias quis excepturi facilis ea provident! Ullam natus architecto officiis nostrum iure. Autem harum id quaerat placeat velit ab quos, quibusdam mollitia atque repudiandae beatae quas similique, provident ipsum repellat! Ut velit delectus quod, iusto odit repellat. Doloribus ab voluptate quaerat a nam libero nihil quo similique ut. Molestiae, rerum quia, necessitatibus officiis dicta, quos ipsam atque voluptatum dolor voluptatem distinctio recusandae quae sed itaque excepturi! Impedit dolorum voluptatibus cumque soluta officiis illo totam, repudiandae repellat! Id quam quos animi blanditiis magni eius autem culpa, enim sapiente odio veritatis fugiat doloremque illum ab in officiis eligendi voluptatem atque optio perferendis, similique ut dolor numquam a? Quas, inventore dolorem consectetur eos incidunt earum accusantium tenetur provident possimus ducimus illo deleniti, tempora ratione, laudantium eius nam quia hic! Possimus molestiae nobis incidunt itaque. Officia voluptatem voluptates consectetur quas odio dolores vitae magni commodi? Commodi quisquam labore maiores exercitationem non ipsum alias assumenda nobis autem error dolorum ab aut, corrupti iusto optio doloremque obcaecati vel nihil illum expedita officia id, cumque natus!
+        </div>
+      </div>
+    </div>
+ -->
+
     <div id="accueil-motos" class="accueil-text-boxes">
       <div id="accueil-motos-cards">
         <div class="accueil-motos-card">
